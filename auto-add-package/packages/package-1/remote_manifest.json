@@ -1,0 +1,6 @@
+{
+  "name": "package1",
+  "remoteEntryName": "remoteEntry.js",
+  "port": "2001",
+  "host": "localhost"
+}
