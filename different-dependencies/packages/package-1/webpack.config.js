@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageJsonDeps = require('./package.json').dependencies;
-const autoAddRemotes = require('./autoAddRemote');
-
 
 const { ModuleFederationPlugin } = webpack.container;
 
@@ -22,7 +20,7 @@ module.exports = {
   },
   devServer: {
     contentBase: DIST_DIR,
-    port: 2000,
+    port: 2001,
     historyApiFallback: true,
     hot: true,
     open: false,
@@ -41,11 +39,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app1",
-      remotes: autoAddRemotes(),
+      name: "package1",
+      library: { type: "var", name: "package1" },
+      filename: "remoteEntry.js",
+      exposes: {
+        "./package1": "./src/App",
+      },
       shared: {
         ...packageJsonDeps,
-        react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react },
+        react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react, },
         "react-dom": { singleton: true, eager: true, requiredVersion: packageJsonDeps["react-dom"] }
       },
     }),

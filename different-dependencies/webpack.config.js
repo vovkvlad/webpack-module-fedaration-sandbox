@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageJsonDeps = require('./package.json').dependencies;
-const autoAddRemotes = require('./autoAddRemote');
-
 
 const { ModuleFederationPlugin } = webpack.container;
 
@@ -42,7 +40,10 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app1",
-      remotes: autoAddRemotes(),
+      remotes: {
+        'package1': 'package1@//localhost:2001/remoteEntry.js',
+        'package2': 'package2@//localhost:2002/remoteEntry.js'
+      },
       shared: {
         ...packageJsonDeps,
         react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react },
