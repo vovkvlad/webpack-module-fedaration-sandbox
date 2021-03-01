@@ -1,4 +1,5 @@
 import app from "./app.module";
+import Home from "./home/home.component";
 
 app.config([
   "$stateProvider",
@@ -9,7 +10,12 @@ app.config([
     $stateProvider.state({
       name: "home",
       url: "/",
-      template: "<h1>Home</h1>",
+      template: '<home></home>',
+      resolve: {
+        component() {
+          Home.register();
+        },
+      },
     });
   },
 ]);
