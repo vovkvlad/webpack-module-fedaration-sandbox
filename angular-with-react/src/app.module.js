@@ -7,7 +7,7 @@ const app = angular
   .module("app", ["ui.router", UI_ROUTER_REACT_HYBRID, ngexports.name], null)
   .config(($logProvider) => {
     "ngInject";
-
+    
     $logProvider.debugEnabled(true);
   })
   .run(() => {
