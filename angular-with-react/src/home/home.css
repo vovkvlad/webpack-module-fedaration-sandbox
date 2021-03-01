@@ -1,0 +1,33 @@
+html,
+body,
+ui-view,
+home,
+.home-container {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: white;
+}
+
+ui-view,
+home {
+  display: block;
+}
+
+.home-container {
+  display: flex;
+}
+
+.button {
+  color: inherit;
+  border: none;
+  padding: 1.4rem 2.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+}

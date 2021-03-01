@@ -40,6 +40,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: "html-loader",
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
