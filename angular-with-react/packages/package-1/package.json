@@ -20,6 +20,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@uirouter/react-hybrid": "^1.0.3",
+    "angular": "^1.7.9",
     "dayjs": "^1.10.4",
     "lodash": "^4.17.21",
     "react": "^17.0.1",

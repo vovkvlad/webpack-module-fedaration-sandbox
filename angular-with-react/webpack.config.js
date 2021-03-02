@@ -51,19 +51,19 @@ module.exports = {
       name: "host-app",
       remotes: {
         package1: "package1@//localhost:2001/remoteEntry.js",
-        package2: "package2@//localhost:2002/remoteEntry.js",
+        // package2: "package2@//localhost:2002/remoteEntry.js",
       },
       shared: {
-        ...packageJsonDeps,
+        // ...packageJsonDeps,
+        "@uirouter/react-hybrid": {
+          singleton: true,
+          eager: true,
+          requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
+        },
         angular: {
           singleton: true,
           eager: true,
           requiredVersion: packageJsonDeps.angular,
-        },
-        "@uirouter/react-hybrid": {
-          singleton: true,
-          eager: true,
-          requiredVersion: "@uirouter/react-hybrid",
         },
         react: {
           singleton: true,

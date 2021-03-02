@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from "react";
 
-export function App2() {
-  return(
-    <div className="app-2-contaier">
-      <h2>Inner content of package 1</h2>
-    </div>
-  )
+export default class NewTheme extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1 style={{color: "green"}}>Hello from react class component</h1>
+      </div>
+    );
+  }
 }
-
-export default App2;
