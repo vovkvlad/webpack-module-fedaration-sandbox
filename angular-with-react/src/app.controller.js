@@ -1,14 +1,12 @@
-import app from './app.module';
-// import ColorService from "./data/color.service";
+import app from "./app.module";
+import {$log} from "./ng";
 
 function appController($scope) {
-  'ngInject';
+  "ngInject";
 
-  // $scope.themeColor = ColorService.getInstance().themeColor;
-
-  // console.error('Col', $scope.themeColor)
+  $log.debug("Init app controller");
 }
 
-app.controller('AppController', appController);
+app.controller("AppController", appController);
 
-export default 'AppController';
+export default "AppController";
