@@ -1,6 +1,6 @@
 import app from "./app.module";
 import Home from "./home/home.component";
-import AddNewTheme from "./new-theme/add-new-theme";
+import AddNewTheme from "./add-new-theme/add-new-theme";
 import ThemeSwitcher from "./theme-switcher/theme-switcher.component";
 
 const states = [
