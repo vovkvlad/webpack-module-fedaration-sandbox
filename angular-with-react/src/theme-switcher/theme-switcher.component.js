@@ -2,12 +2,15 @@ import NgComponent from "../ng-component";
 import {$rootScope} from "../ng";
 import ColorService from "../data/color.service";
 import template from "./theme-switcher.html";
+import NewTheme from "./new-theme-link";
 import "./theme-switcher.css";
 
 export default class ThemeSwitcher extends NgComponent {
   static selector = "theme-switcher";
 
   static template = template;
+
+  static directives = [NewTheme];
 
   constructor() {
     super();
