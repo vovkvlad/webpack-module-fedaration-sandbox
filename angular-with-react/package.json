@@ -27,7 +27,6 @@
   "dependencies": {
     "@uirouter/react-hybrid": "^1.0.3",
     "angular": "^1.7.9",
-    "jquery": "^3.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

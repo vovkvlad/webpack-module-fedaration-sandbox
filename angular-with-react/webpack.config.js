@@ -65,11 +65,6 @@ module.exports = {
           eager: true,
           requiredVersion: packageJsonDeps.angular,
         },
-        jquery: {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps.jquery,
-        },
         react: {
           singleton: true,
           eager: true,
