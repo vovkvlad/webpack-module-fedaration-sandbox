@@ -1,8 +1,5 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-const packageJsonDeps = require("./package.json").dependencies;
-
 const {ModuleFederationPlugin} = webpack.container;
 
 const path = require("path");
@@ -49,29 +46,7 @@ module.exports = {
       exposes: {
         "./package1": "./src/App",
       },
-      shared: {
-        // ...packageJsonDeps,
-        "@uirouter/react-hybrid": {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
-        },
-        angular: {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps.angular,
-        },
-        react: {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps["react-dom"],
-        },
-      },
+      shared: {},
     }),
     new HtmlWebpackPlugin({
       template: APP_TEMPLATE,
