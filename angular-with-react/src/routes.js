@@ -1,12 +1,12 @@
 import app from "./app.module";
 import Home from "./home/home.component";
-
-import AddNewTheme from './new-theme/add-new-theme';
+import AddNewTheme from "./new-theme/add-new-theme";
+import ThemeSwitcher from "./theme-switcher/theme-switcher.component";
 
 const states = [
   {
     name: "home",
-    url: "/",
+    url: "/home",
     template: "<home></home>",
     resolve: {
       component() {
@@ -15,7 +15,17 @@ const states = [
     },
   },
   {
-    name: "new",
+    name: "home.switcher",
+    url: "/switcher",
+    template: "<theme-switcher></theme-switcher>",
+    resolve: {
+      component() {
+        ThemeSwitcher.register();
+      },
+    },
+  },
+  {
+    name: "home.new",
     url: "/new",
     component: AddNewTheme,
   },
@@ -28,5 +38,7 @@ app.config([
     $locationProvider.html5Mode({enabled: true, requireBase: false});
 
     states.forEach((state) => $uiRouterProvider.stateRegistry.register(state));
+
+    $uiRouterProvider.urlService.rules.initial({state: "home.switcher"});
   },
 ]);

@@ -16,7 +16,7 @@ module.exports = {
   entry: ENTRY_POINT,
   output: {
     path: DIST_DIR,
-    filename: "js/[name].bundle.[hash].js",
+    filename: "js/bundle.[hash].js",
   },
   devServer: {
     contentBase: DIST_DIR,
@@ -34,6 +34,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

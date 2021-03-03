@@ -13,6 +13,10 @@ export default class ColorService extends NgService {
   }
 
   addColor(color) {
+    if (this.colors.includes(color)) {
+      return;
+    }
+
     this.colors.push(color);
     this.themeColor = color;
   }

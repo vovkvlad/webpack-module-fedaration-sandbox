@@ -1,10 +1,11 @@
 import React from "react";
+import "./app.css";
 
 export default class NewTheme extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: "",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -12,24 +13,25 @@ export default class NewTheme extends React.Component {
   }
 
   onChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({value: e.target.value});
   }
 
   onSubmit(e) {
     e.preventDefault();
-    
+
     if (this.state.value) {
       this.props.onChange(this.state.value);
     }
   }
 
   render() {
-    console.error('BOOOO', this.props.themeColor)
     return (
-      <form onSubmit={this.onSubmit}>
-        <input name="new" value={this.state.value} onChange={this.onChange} />
-        <button type="submit">Add new</button>
-      </form> 
+      <div className="new-theme-container">
+        <form onSubmit={this.onSubmit}>
+          <input name="new" value={this.state.value} onChange={this.onChange} />
+          <button className="submit-button" type="submit">Add new</button>
+        </form>
+      </div>
     );
   }
 }

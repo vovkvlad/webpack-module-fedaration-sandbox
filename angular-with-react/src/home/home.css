@@ -6,17 +6,17 @@ home,
   height: 100%;
 }
 
+react-ui-view-adapter {
+  width: 100%;
+  display: flex;
+}
+
 body {
   margin: 0;
   color: white;
 }
 
-ui-view,
-home {
-  display: block;
-}
-
-.home-container {
+.home-container ui-view {
   display: flex;
 }
 
@@ -36,7 +36,7 @@ home {
   color: gray;
   font-weight: 700;
   font-size: 42px;
-  position: absolute;
+  position: fixed;
   right: 60px;
   bottom: 60px;
   text-decoration: none;

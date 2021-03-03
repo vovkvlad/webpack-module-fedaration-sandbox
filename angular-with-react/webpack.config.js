@@ -16,7 +16,8 @@ module.exports = {
   entry: ENTRY_POINT,
   output: {
     path: DIST_DIR,
-    filename: "js/[name].bundle.[hash].js",
+    filename: "js/bundle.[hash].js",
+    publicPath: '/'
   },
   devServer: {
     contentBase: DIST_DIR,

@@ -1,7 +1,5 @@
 import NgComponent from "../ng-component";
-import ThemeSwitcher from "../theme-switcher/theme-switcher.component";
-import NgNewTheme from "../new-theme/new-theme";
-import ColorService from "../data/color.service";
+import {$rootScope} from "../ng";
 import template from "./home.html";
 import "./home.css";
 
@@ -10,32 +8,15 @@ export default class Home extends NgComponent {
 
   static template = template;
 
-  static directives = [ThemeSwitcher];
-
-  constructor() {
-    super();
-
-    this.colorService = ColorService.getInstance();
-    this.setThemeColor = this.setThemeColor.bind(this);
-  }
-
   $onInit() {
     this.onInit();
   }
 
-  async onInit() {
-    await this.colorService.fetch();
-
-    this.setState({
-      themeColor: this.colorService.themeColor,
-      colors: this.colorService.colors,
-    });
-  }
-
-  setThemeColor(color) {
-    this.colorService.setThemeColor(color);
-    this.setState({
-      themeColor: this.colorService.themeColor,
+  onInit() {
+    $rootScope.$on('theme:changed', (event, data) => {
+      this.setState({
+        themeColor: data,
+      });
     });
   }
 }
