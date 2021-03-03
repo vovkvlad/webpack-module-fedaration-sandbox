@@ -54,7 +54,6 @@ module.exports = {
         package1: "package1@//localhost:2001/remoteEntry.js",
       },
       shared: {
-        // ...packageJsonDeps,
         "@uirouter/react-hybrid": {
           singleton: true,
           eager: true,
