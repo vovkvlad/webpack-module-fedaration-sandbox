@@ -1,0 +1,10 @@
+<ul class="theme-switcher">
+  <li ng-repeat="color in $ctrl.colors" class="theme-switcher-item">
+    <button
+      class="button"
+      ng-style="{ background: color }"
+      ng-click="$ctrl.setThemeColor(color)"
+    >{{color}}</button>
+  </li>
+</ul>
+<new-theme-link></new-theme-link>
