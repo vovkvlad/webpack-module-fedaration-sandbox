@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 
-import NgComponent from '.ng-component';
+import NgComponent from './ng-component';
 
 export default class NgReactComponent extends NgComponent {
   static wrap(ReactComponent, selector, transclude) {

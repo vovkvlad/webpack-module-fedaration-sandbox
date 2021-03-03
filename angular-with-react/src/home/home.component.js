@@ -1,5 +1,6 @@
 import NgComponent from "../ng-component";
 import ThemeSwitcher from "../theme-switcher/theme-switcher.component";
+import NgNewTheme from "../new-theme/new-theme";
 import ColorService from "../data/color.service";
 import template from "./home.html";
 import "./home.css";

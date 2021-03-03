@@ -5,9 +5,15 @@ export default class ColorService extends NgService {
     super();
     this.colors = [];
     this.themeColor = null;
+    this.addColor = this.addColor.bind(this);
   }
 
   setThemeColor(color) {
+    this.themeColor = color;
+  }
+
+  addColor(color) {
+    this.colors.push(color);
     this.themeColor = color;
   }
 

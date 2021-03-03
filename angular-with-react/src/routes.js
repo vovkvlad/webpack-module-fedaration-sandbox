@@ -1,6 +1,7 @@
 import app from "./app.module";
 import Home from "./home/home.component";
-import NewTheme from "./new-theme/new-theme";
+
+import AddNewTheme from './new-theme/add-new-theme';
 
 const states = [
   {
@@ -16,7 +17,7 @@ const states = [
   {
     name: "new",
     url: "/new",
-    component: NewTheme,
+    component: AddNewTheme,
   },
 ];
 

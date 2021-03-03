@@ -51,7 +51,6 @@ module.exports = {
       name: "host-app",
       remotes: {
         package1: "package1@//localhost:2001/remoteEntry.js",
-        // package2: "package2@//localhost:2002/remoteEntry.js",
       },
       shared: {
         // ...packageJsonDeps,
@@ -64,6 +63,11 @@ module.exports = {
           singleton: true,
           eager: true,
           requiredVersion: packageJsonDeps.angular,
+        },
+        jquery: {
+          singleton: true,
+          eager: true,
+          requiredVersion: packageJsonDeps.jquery,
         },
         react: {
           singleton: true,
