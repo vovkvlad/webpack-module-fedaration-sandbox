@@ -12,6 +12,7 @@ export function Timer() {
 
   return (
     <div style={{ background: 'beige' }}>
+      <p>Time from package 2:</p>
       {time}
     </div>
   );

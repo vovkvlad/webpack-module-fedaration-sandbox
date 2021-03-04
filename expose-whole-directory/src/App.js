@@ -6,6 +6,7 @@ const RemoteTimer1 = React.lazy(() => import("package1/Timer"));
 
 // Hey! we can use usual imports!!!
 import Components2 from "package2/components";
+import { Timer } from "package2/Timer";
 
 
 export default function App() {
@@ -41,7 +42,7 @@ export default function App() {
       </div>
 
       <div className="timer-container">
-        <Components2.Timer />
+        <Timer />
       </div>
     </div>
   );
