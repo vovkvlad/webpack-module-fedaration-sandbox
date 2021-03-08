@@ -7,7 +7,7 @@ dev server (the one hosting the main app)
 
 the remote of the host app is configured next way:
 
-```json
+```js
  remotes: {
   'package1': 'package1@/package1/remoteEntry.js'
  }
