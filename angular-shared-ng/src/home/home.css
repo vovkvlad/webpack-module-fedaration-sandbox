@@ -1,0 +1,53 @@
+html,
+body,
+ui-view,
+home,
+.home-container {
+  height: 100%;
+}
+
+react-ui-view-adapter {
+  width: 100%;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  color: white;
+}
+
+.home-container ui-view {
+  display: flex;
+}
+
+.button {
+  color: inherit;
+  border: none;
+  padding: 1.4rem 2.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+
+.anchor {
+  color: gray;
+  font-weight: 700;
+  font-size: 42px;
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.8;
+}
+
+

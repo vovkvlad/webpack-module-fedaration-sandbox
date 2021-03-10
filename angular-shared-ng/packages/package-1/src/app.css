@@ -1,0 +1,20 @@
+.new-theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.new-theme-container button,
+.new-theme-container input {
+  padding: 16px 20px;
+}
+
+.new-theme-container input {
+  width: 400px;
+  margin-right: 2px;
+}
+
+.new-theme-container button {
+  font-weight: 700;
+}
