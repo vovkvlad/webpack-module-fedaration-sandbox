@@ -1,0 +1,10 @@
+.admin-nav-links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.admin-nav-link {
+    margin-right: 20px;
+    list-style: none;
+}

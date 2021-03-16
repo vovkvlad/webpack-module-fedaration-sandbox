@@ -1,0 +1,75 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-text-color);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: var(--main-bg-color);
+}
+
+button {
+    border: 2px solid;
+    background-color: transparent;
+    color: var(--main-text-color);
+    padding: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: rgba(256, 256, 256, 0.3);
+    color: var(--highliht-color);
+}
+
+button.action {
+    border: none;
+    border-radius: 50%;
+}
+
+input {
+    background: transparent;
+    border: 1px solid var(--main-text-color);
+    color: var(--main-text-color);
+    outline: none;
+    padding: 7px;
+}
+
+input:focus {
+    border-color: var(--highliht-color);
+    color: var(--highliht-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+a:visited {
+    color: var(--main-text-color);
+}
+
+a.active {
+    color: var(--highliht-color);
+}
+
+.error-msg {
+    color: var(--hightlight-color-2);
+    font-weight: bold;
+}
+
+:root {
+    --main-bg-color: #3E484A;
+    --tiles-bg: #66797A;
+    --second-main-color: #32373B;
+
+
+    --main-text-color: #F4D6CC;
+
+    --highliht-color: #F4B860;
+    --hightlight-color-2: #C83E4D;
+}

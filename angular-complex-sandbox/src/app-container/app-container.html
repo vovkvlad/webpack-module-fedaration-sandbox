@@ -1,0 +1,22 @@
+<div class="app-container">
+    <nav class="header">
+        <div class="logo">
+            <img class="header-logo" src="./robot.png" alt="Robot!">
+        </div>
+        <ul class="header-links">
+            <li class="header-link">
+                <a ui-sref-active="{'active': 'app.leaderboard.**'}" ui-sref="app.leaderboard">Leaderboard</a>
+            </li>
+            <li class="header-link">
+                <a ui-sref-active="{'active': 'app.admin.**'}" ui-sref="app.admin.userPermissions">Admin</a>
+            </li>
+            <li class="header-link">
+                <a ui-sref-active="{'active': 'app.react-page.**'}" ui-sref="app.react-page.sub-page-1">React Page</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="app-body">
+        <ui-view></ui-view>
+    </main>
+</div>
