@@ -1,12 +1,12 @@
 import React from 'react';
 import { UIView, UISrefActive, UISref } from '@uirouter/react';
-import { UIRouterContextComponent } from '@uirouter/react-hybrid';
 
 import { UserPermissions } from './components/user-permissions/user-permissions';
 
+import './App.css';
+
 export default function App() {
   return (
-    <UIRouterContextComponent>
       <div className="react-page-container">
         <h1>This is top level page that is rendered using react</h1>
         <p>it also uses User permissions service to list all permissions below:</p>
@@ -37,6 +37,5 @@ export default function App() {
 
         <UIView/>
       </div>
-    </UIRouterContextComponent>
   );
 }

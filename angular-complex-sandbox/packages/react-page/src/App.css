@@ -1,0 +1,14 @@
+.react-tabs-container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.react-tab-item {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.react-tab-active {
+    color: var(--highliht-color);
+}

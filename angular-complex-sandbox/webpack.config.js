@@ -26,6 +26,7 @@ module.exports = {
     hot: true,
     open: false,
     clientLogLevel: "debug",
+    writeToDisk: true,
   },
   mode: "development",
   devtool: "cheap-module-source-map",
@@ -61,6 +62,16 @@ module.exports = {
           singleton: true,
           eager: true,
           requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
+        },
+        "@uirouter/react": {
+          singleton: true,
+          eager: true,
+          // requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
+        },
+        "@uirouter/angularjs": {
+          singleton: true,
+          eager: true,
+          // requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
         },
         angular: {
           singleton: true,

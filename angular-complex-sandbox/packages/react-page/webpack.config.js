@@ -57,12 +57,25 @@ module.exports = {
       },
       shared: {
         ...packageJsonDeps,
-        "react-dom": { singleton: true, eager: true, requiredVersion: packageJsonDeps["react-dom"] },
-        react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react, },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: packageJsonDeps["react-dom"]
+        },
+        react: {
+          singleton: true,
+          requiredVersion: packageJsonDeps.react,
+        },
         "@uirouter/react-hybrid": {
           singleton: true,
-          eager: true,
           requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
+        },
+        "@uirouter/react": {
+          singleton: true,
+          // requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
+        },
+        "@uirouter/angularjs": {
+          singleton: true,
+          // requiredVersion: packageJsonDeps["@uirouter/react-hybrid"],
         },
       },
     }),
