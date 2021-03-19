@@ -56,11 +56,16 @@ module.exports = {
         ...packageJsonDeps,
         angular: {
           singleton: true,
-          eager: true,
           requiredVersion: packageJsonDeps.angular,
         },
-        "react-dom": { singleton: true, eager: true, requiredVersion: packageJsonDeps["react-dom"] },
-        react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react, },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: packageJsonDeps["react-dom"]
+        },
+        react: {
+          singleton: true,
+          requiredVersion: packageJsonDeps.react,
+        },
       },
     }),
     // new HtmlWebpackPlugin({

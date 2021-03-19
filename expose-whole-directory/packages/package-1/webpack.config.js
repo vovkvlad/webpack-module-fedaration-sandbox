@@ -49,8 +49,8 @@ module.exports = {
       },
       shared: {
         ...packageJsonDeps,
-        react: { singleton: true, eager: true, requiredVersion: packageJsonDeps.react, },
-        "react-dom": { singleton: true, eager: true, requiredVersion: packageJsonDeps["react-dom"] }
+        react: { singleton: true, requiredVersion: packageJsonDeps.react, },
+        "react-dom": { singleton: true, requiredVersion: packageJsonDeps["react-dom"] }
       },
     }),
     new HtmlWebpackPlugin({
