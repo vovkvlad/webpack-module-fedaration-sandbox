@@ -1,0 +1,17 @@
+<div class="user-permissions-container">
+    <h2 class="user-permissions-header">User Permissions</h2>
+    <p>This is angularJS dummy user permissions saved in the UserService and shared across apps</p>
+
+    <div class="permissions-checkbox-container">
+        <div class="user-permission-item" ng-repeat="permissionName in $ctrl.allPermissionsNames">
+            <div class="permission-checkbox-field">
+                <input
+                        type="checkbox"
+                        ng-model="$ctrl.userPermissionsService.userPermissions[permissionName]" id="{{permissionName}}"
+                        ng-change="$ctrl.onInputChange()"
+                >
+                <label for="{{permissionName}}">{{permissionName}}</label>
+            </div>
+        </div>
+    </div>
+</div>

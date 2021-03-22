@@ -1,0 +1,39 @@
+<div class="leaderboard-container">
+    <div class="leaderboard-actionbar">
+        <button
+                class="add-new-leaderboard-item"
+                ng-click="$ctrl.toggleShowNewItemForm()"
+                ng-if="$ctrl.userPermissionsService.canAddNewLeaderBoardItems()"
+        >
+            <span ng-if="!$ctrl.showAddNewItemForm">+ Add new Item</span>
+            <span ng-if="$ctrl.showAddNewItemForm">X Close form</span>
+        </button>
+        <p ng-if="!$ctrl.userPermissionsService.canAddNewLeaderBoardItems()">To add new items you need to have respective user permissions</p>
+    </div>
+    <div class="leaderboard-form-container" ng-if="$ctrl.showAddNewItemForm">
+        <div class="labeled-field">
+            <label for="new-model-name">Item name:</label>
+            <input type="text" id="new-model-name" ng-model="$ctrl.newLeaderBoardItem.name"/>
+        </div>
+        <div class="labeled-field">
+            <label for="new-model-description">Item description:</label>
+            <input type="text" id="new-model-description" ng-model="$ctrl.newLeaderBoardItem.description"/>
+        </div>
+
+        <button class="add-new-item" ng-click="$ctrl.addNewLeaderboardItem()">Add</button>
+    </div>
+    <div ng-if="$ctrl.newLeaderboardItemError" class="new-leaderboard-item-error">
+        <p class="error-msg">{{$ctrl.newLeaderboardItemError}}</p>
+    </div>
+    <div class="leaderboard-item" ng-repeat="lbItem in $ctrl.leaderBoardItems">
+        <div class="leaderboard-item-header">
+            <h2 class="leaderboard-item-name">{{ lbItem.name }}</h2>
+            <div class="leaderboard-item-header-actions" ng-if="$ctrl.userPermissionsService.canDeleteLeaderBoardItems()">
+                <button class="remove-leaderboard-item action" ng-click="$ctrl.removeLeaderboardItem(lbItem)">X</button>
+            </div>
+        </div>
+        <div class="leaderboard-item-description">
+            {{lbItem.description}}
+        </div>
+    </div>
+</div>
