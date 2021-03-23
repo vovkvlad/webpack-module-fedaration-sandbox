@@ -1,16 +1,36 @@
+const path = require('path');
+const fs = require('fs');
+
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const packageJsonDeps = require("./package.json").dependencies;
 
 const {ModuleFederationPlugin} = webpack.container;
 
-const path = require("path");
-
 const SRC_DIR = path.resolve(__dirname, "./src");
 const ENTRY_POINT = path.resolve(SRC_DIR, "./index.js");
 const DIST_DIR = path.resolve(__dirname, "./dist");
 const APP_TEMPLATE = path.resolve(__dirname, "./index.html");
+
+// ideally should be moved out of this file
+function getAllPackagesDistExcludeRules() {
+  const packagesPath = path.join(__dirname, 'packages');
+  const allDirectories = fs.readdirSync(packagesPath);
+
+  const directoryPatternsToExclude = [];
+
+  allDirectories.forEach(packageName => {
+    // ideally we can use directory name in case it is the same as package.json's name prop, which is not my case, sadly
+    const packageJson = JSON.parse(fs.readFileSync(path.join(packagesPath, packageName, 'package.json'), 'utf8'));
+
+    directoryPatternsToExclude.push(`!${packageJson.name}`);
+    directoryPatternsToExclude.push(`!${packageJson.name}/**/*`);
+  });
+
+  return directoryPatternsToExclude;
+}
 
 module.exports = {
   entry: ENTRY_POINT,
@@ -96,6 +116,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin({
       activeModules: true,
+    }),
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: ["**/*", "**/*.js.map", ...getAllPackagesDistExcludeRules()]
     }),
   ],
 };

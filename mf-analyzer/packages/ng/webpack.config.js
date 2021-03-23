@@ -2,6 +2,7 @@ const webpack = require("webpack");
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = webpack.container;
 const packageJsonDeps = require("./package.json").dependencies;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const path = require("path");
 
@@ -74,6 +75,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin({
       activeModules: true,
+    }),
+    new CleanWebpackPlugin({
+      verbose: true,
     }),
   ],
 };

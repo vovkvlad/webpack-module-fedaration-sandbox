@@ -1,5 +1,5 @@
 {
-  "name": "react_page",
+  "name": "react_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",

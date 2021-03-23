@@ -3,6 +3,9 @@ const webpack = require("webpack");
 const { ModuleFederationPlugin } = webpack.container;
 const packageJsonDeps = require("./package.json").dependencies;
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+
 const path = require("path");
 
 const SRC_DIR = path.resolve(__dirname, "./src");
@@ -82,6 +85,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin({
       activeModules: true,
+    }),
+    new CleanWebpackPlugin({
+      verbose: true,
     }),
   ],
 };
