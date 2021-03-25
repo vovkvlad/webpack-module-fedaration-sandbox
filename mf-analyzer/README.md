@@ -12,6 +12,10 @@ https://www.npmjs.com/package/@module-federation/dashboard-plugin
 One of the pages of the dashboard is shown below:
 ![img.png](img.png)
 
+## webpack-bundle-analyzer
+Host app and react_app also has webpack-bundle-analyzer plugins included, so that each individual bundle
+can be investigated
+
 ## Start up dashboard locally
 1. pull the latest dashboard image `npm i @module-federation/dashboard-plugin`
 2. start up container with following command:

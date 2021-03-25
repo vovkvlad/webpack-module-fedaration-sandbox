@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DashboardPlugin = require("@module-federation/dashboard-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const packageJsonDeps = require("./package.json").dependencies;
 
@@ -129,5 +130,6 @@ module.exports = {
         prop: 'test-prop',
       }
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 };

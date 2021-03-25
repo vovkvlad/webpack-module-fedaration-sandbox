@@ -5,6 +5,7 @@ const packageJsonDeps = require("./package.json").dependencies;
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DashboardPlugin = require("@module-federation/dashboard-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 const path = require("path");
@@ -94,5 +95,6 @@ module.exports = {
       dashboardURL: "http://localhost:3000/api/update",
       publishVersion: '1.0.0',
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 };
