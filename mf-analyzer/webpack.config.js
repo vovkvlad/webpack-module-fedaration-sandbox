@@ -4,6 +4,7 @@ const fs = require('fs');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 
 const packageJsonDeps = require("./package.json").dependencies;
 
@@ -120,6 +121,13 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: true,
       cleanOnceBeforeBuildPatterns: ["**/*", "**/*.js.map", ...getAllPackagesDistExcludeRules()]
+    }),
+    new DashboardPlugin({
+      dashboardURL: "http://localhost:3000/api/update",
+      metadata: {
+        name: 'AAAAAAAA',
+        prop: 'test-prop',
+      }
     }),
   ],
 };

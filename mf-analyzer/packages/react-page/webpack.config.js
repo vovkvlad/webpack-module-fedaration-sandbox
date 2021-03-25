@@ -4,6 +4,7 @@ const { ModuleFederationPlugin } = webpack.container;
 const packageJsonDeps = require("./package.json").dependencies;
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 
 
 const path = require("path");
@@ -88,6 +89,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin({
       verbose: true,
+    }),
+    new DashboardPlugin({
+      dashboardURL: "http://localhost:3000/api/update",
+      publishVersion: '1.0.0',
     }),
   ],
 };
