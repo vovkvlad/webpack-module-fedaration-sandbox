@@ -1,14 +1,23 @@
-# Monorepo test with npm@7 workspaces
+# Monorepo test with lerna
 
-you can read about npm workspaces here: https://docs.npmjs.com/cli/v7/using-npm/workspaces
+you can read about lerna here: https://github.com/lerna/lerna
 
-Current capabilities I have found:
-1. It lets you install dependencies from the root repository for all packages and host app
-2. You can run command for specific workspaces with `--workspace=*workspace_name*` flag
+- To install all deps in all packages run `lerna bootstrap`
+- To install all packages' deps with hoisting run `lerna bootstrap --hoist` (read more about it here https://github.com/lerna/lerna/tree/main/commands/bootstrap)
+
+You can run commands in 2 different ways: with --stream or --parallel flags.
+As per my understanding `--parallel` is more suitable for long running commands such as
+running webpack dev server. Read more about it here https://github.com/lerna/lerna/tree/main/commands/bootstrap
+
+To start dev server in all packages run
+```shell
+lerna run start --parallel
+```
+
+To build all packages run 
+```shell
+lerna run build --stream
+```
 
 ## Note:
-Also you can run command for several workspaces at once:
-```shell
-npm run build --workspace=react_app --workspace=admin_app
-```
-it won't let you run several devs servers at once. 
+Shell application still should be run separately as it is not a lerna managed package
