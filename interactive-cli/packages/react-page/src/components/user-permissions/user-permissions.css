@@ -1,0 +1,9 @@
+.permission-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.permission-item-name {
+    margin-right: 20px
+}
