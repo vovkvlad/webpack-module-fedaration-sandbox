@@ -10,7 +10,6 @@ return (
       <div className="react-page-container">
         <h1>This is top level page that is rendered using react</h1>
         <p>it also uses User permissions service to list all permissions below:</p>
-        <p>it also uses User permissions service to list all permissions below:</p>
 
         <UserPermissions/>
 
