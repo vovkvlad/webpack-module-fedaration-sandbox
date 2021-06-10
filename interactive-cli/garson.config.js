@@ -27,8 +27,8 @@ async function runPackages(selectedPackages) {
     const npmCommands = selectedPackages.map((packageName) => {
       const command =
         packageName === 'shell-app'
-        ? 'npm run debug'
-        : `npm run debug:${packageName}`;
+          ? 'npm run debug'
+          : `npm run debug:${packageName}`;
       return {
         command,
         name: packageName,
